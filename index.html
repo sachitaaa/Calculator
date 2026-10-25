@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111225" />
+  <title>Aurora — Creative Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <section class="calculator" aria-label="Aurora calculator">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">✳</span>
+          <div>
+            <p class="brand-name">AURORA</p>
+            <p class="brand-subtitle">A little clarity, calculated.</p>
+          </div>
+        </div>
+        <button class="history-toggle" id="historyToggle" type="button" aria-label="Show calculation history" title="Calculation history">↺</button>
+      </header>
+
+      <section class="display" aria-live="polite" aria-atomic="true">
+        <p class="display-label" id="displayLabel">READY WHEN YOU ARE</p>
+        <div class="expression" id="expression">0</div>
+        <div class="result-row">
+          <span class="result-equals">=</span>
+          <output class="result" id="result">0</output>
+        </div>
+      </section>
+
+      <div class="keypad" id="keypad">
+        <button class="key utility" data-action="clear">AC</button>
+        <button class="key utility" data-action="sign">±</button>
+        <button class="key utility" data-action="percent">%</button>
+        <button class="key operator" data-value="÷" aria-label="Divide">÷</button>
+
+        <button class="key" data-value="7">7</button>
+        <button class="key" data-value="8">8</button>
+        <button class="key" data-value="9">9</button>
+        <button class="key operator" data-value="×" aria-label="Multiply">×</button>
+
+        <button class="key" data-value="4">4</button>
+        <button class="key" data-value="5">5</button>
+        <button class="key" data-value="6">6</button>
+        <button class="key operator" data-value="−" aria-label="Subtract">−</button>
+
+        <button class="key" data-value="1">1</button>
+        <button class="key" data-value="2">2</button>
+        <button class="key" data-value="3">3</button>
+        <button class="key operator" data-value="+" aria-label="Add">+</button>
+
+        <button class="key utility" data-action="backspace" aria-label="Delete last digit">⌫</button>
+        <button class="key zero" data-value="0">0</button>
+        <button class="key" data-action="decimal">.</button>
+        <button class="key equals" data-action="equals" aria-label="Calculate result">=</button>
+      </div>
+
+      <aside class="history-panel" id="historyPanel" hidden>
+        <div class="history-heading">
+          <span>RECENT MATH</span>
+          <button id="clearHistory" type="button">Clear</button>
+        </div>
+        <div id="historyList" class="history-list">
+          <p class="empty-history">Your calculations will appear here.</p>
+        </div>
+      </aside>
+
+      <footer class="footer">
+        <span><i class="status-dot"></i> YOUR MIND, IN MOTION</span>
+        <span>HTML · CSS · JS</span>
+      </footer>
+    </section>
+    <p class="keyboard-hint">Tip: use your keyboard, too — Enter to calculate · Esc to clear</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
